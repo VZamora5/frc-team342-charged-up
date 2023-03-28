@@ -150,6 +150,22 @@ public class GripperSystem extends SubsystemBase {
         });
   }
 
+  public CommandBase coneOuttake(AddressableLEDSubsystem aLedSubsystem) {
+    return runEnd(
+      () -> {
+
+        spin(-(CONE_SPEED));
+
+      },
+
+      () -> {
+        
+        spin(0);
+        isHolding = false;
+
+      });
+  }
+
   @Override
   public void initSendable(SendableBuilder builder) {
 
